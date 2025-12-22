@@ -1,32 +1,21 @@
-// Header scroll effect
+// Efeito no Cabeçalho ao rolar a página
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
-    header.classList.toggle('scrolled', window.scrollY > 50);
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
 });
 
-// FAQ Acordeão
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.querySelector('.faq-answer');
-        const icon = item.querySelector('i');
-        const isOpen = answer.style.display === 'block';
-
-        document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
-        document.querySelectorAll('.faq-question i').forEach(i => i.className = 'fas fa-plus');
-
-        if (!isOpen) {
-            answer.style.display = 'block';
-            icon.className = 'fas fa-minus';
-        }
-    });
-});
-
-// Suave Scroll para links do menu
+// Suavização do clique em links internos (Smooth Scroll)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        if(this.getAttribute('href') !== "#") {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
