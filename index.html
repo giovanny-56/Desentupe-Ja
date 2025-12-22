@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Desentupe Já | Desentupidora 24h Especializada - Solução Imediata</title>
+    <meta name="description" content="Desentupidora 24h com atendimento imediato. Especialistas em vasos, pias, ralos e esgoto. Orçamento gratuito e garantia técnica. Atendemos hoje!">
+    <meta name="keywords" content="desentupidora 24h, desentupimento urgente, desentupir vaso sanitário, desentupir pia, desentupir ralo, limpeza de fossa, limpeza de caixa de gordura, desentupidora perto de mim, orçamento gratuito desentupimento, hidrojateamento, desentupimento de esgoto, desentupidora preço justo, atendimento imediato">
+    <meta name="description" content="Precisa de uma desentupidora 24h com atendimento imediato? Especialistas em desentupimento de vasos, pias, ralos e esgoto sem quebradeira. Orçamento gratuito e garantia técnica.">
+    <meta name="author" content="Desentupe Já">
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0f1113;
+            --bg-card: #1a1d21;
+            --primary-blue: #0A63AD;
+            --accent-green: #2ecc71;
+            --text-main: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        /* HEADER DINÂMICO */
+        header {
+            background: transparent;
+            padding: 30px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            padding: 15px 8%;
+            background: rgba(15, 17, 19, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem; 
+            font-weight: 800; 
+            color: var(--white); 
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+        .logo span { color: var(--primary-blue); }
+
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav ul li a { 
+            color: var(--text-dim); 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: 0.3s;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover { color: var(--white); }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
+                        url('https://images.unsplash.com/photo-1558976825-6b1b03a03719?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-content { max-width: 900px; animation: fadeInUp 1s ease; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 900; margin-bottom: 20px; line-height: 1.1; }
+        .hero p { color: var(--text-dim); font-size: 1.2rem; margin-bottom: 40px; }
+
+        .btn-main {
+            background: var(--accent-green);
+            color: #000;
+            padding: 20px 45px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+        }
+        .btn-main:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(46, 204, 113, 0.5); }
+
+        /* SEÇÃO QUEM SOMOS (DARK) */
+        .about { padding: 100px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-img img { width: 100%; border-radius: 20px; filter: grayscale(30%); }
+        .tag { color: var(--accent-green); font-weight: bold; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+
+        /* CARDS DE SERVIÇOS */
+        .services { padding: 100px 8%; background: var(--bg-card); text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card { 
+            background: var(--bg-dark); 
+            padding: 40px; 
+            border-radius: 20px; 
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.4s;
+            text-align: left;
+        }
+        .card:hover { border-color: var(--primary-blue); transform: translateY(-10px); }
+        .card i { font-size: 2.5rem; color: var(--primary-blue); margin-bottom: 20px; }
+        .card h3 { margin-bottom: 15px; font-size: 1.5rem; }
+        .card p { color: var(--text-dim); }
+
+        /* FAQ - PERGUNTAS FREQUENTES */
+        .faq { padding: 100px 8%; }
+        .faq-item { background: var(--bg-card); margin-bottom: 15px; border-radius: 10px; overflow: hidden; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; font-weight: bold; }
+        .faq-answer { padding: 0 20px 20px; color: var(--text-dim); display: none; }
+
+        /* WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-green);
+            color: #000;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            text-decoration: none;
+            z-index: 2000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            animation: pulse 2s infinite;
+        }
+
+        /* ANIMAÇÕES */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(46, 204, 113, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 900px) {
+            .about { grid-template-columns: 1fr; text-align: center; }
+            nav { display: none; }
+            .hero h1 { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="header">
+        <a href="#" class="logo">DESENTUPE<span> JÁ</span></a>
+        <nav>
+            <ul>
+                <li><a href="#about">Quem Somos</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+                <li><a href="https://wa.me/5511952409578" style="color: var(--accent-green);">Atendimento 24h</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="tag">Equipe Especializada</span>
+            <h1>Desentupimento Profissional sem Quebradeira</h1>
+            <p>Atendimento emergencial 24 horas. Chegamos rápido e resolvemos na hora com maquinário de ponta e preço justo.</p>
+            <a href="https://wa.me/5511952409578" class="btn-main">SOLICITAR ORÇAMENTO GRÁTIS</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?auto=format&fit=crop&q=80&w=800" alt="Equipe Técnica">
+        </div>
+        <div class="about-text">
+            <span class="tag">Sobre Nós</span>
+            <h2 style="font-size: 2.5rem; margin-top: 10px;">Líderes em Desobstrução de Tubulações</h2>
+            <p style="margin: 20px 0;">A <strong>Desentupe Já</strong> nasceu para quebrar o estigma de que desentupimento é sinônimo de sujeira e bagunça. Utilizamos o método de <em>Sonda Rotativa</em> e <em>Hidrojateamento</em>, garantindo a preservação do seu patrimônio.</p>
+            <ul style="list-style: none; color: var(--accent-green); font-weight: bold;">
+                <li><i class="fas fa-check-circle"></i> Sem quebrar pisos ou paredes</li>
+                <li><i class="fas fa-check-circle"></i> Higienização pós-serviço</li>
+                <li><i class="fas fa-check-circle"></i> Garantia técnica de 90 dias</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <span class="tag">O que fazemos</span>
+        <h2>Nossas Soluções Técnicas</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-toilet-paper-slash"></i>
+                <h3>Vasos Sanitários</h3>
+                <p>Remoção de obstruções internas com sistema de mola flexível que não danifica a cerâmica.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-sink"></i>
+                <h3>Pias e Ralos</h3>
+                <p>Limpeza profunda que remove gordura e restos orgânicos da tubulação, evitando o mau cheiro.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Rede de Esgoto</h3>
+                <p>Desentupimento de ramais principais e colunas prediais com equipamentos de alta potência.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <span class="tag">Transparência</span>
+        <h2 style="margin-bottom: 40px;">Dúvidas Frequentes</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Quanto tempo demora para a equipe chegar? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Para chamados emergenciais, nosso tempo médio de chegada é de 30 a 50 minutos, dependendo da sua localização.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">O orçamento tem custo? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Não! Realizamos a visita técnica e o orçamento de forma totalmente gratuita e sem compromisso.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Vocês dão garantia do serviço? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Sim, todos os nossos serviços acompanham nota fiscal e certificado de garantia por escrito.</div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 8%; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div class="logo">DESENTUPE<span>JÁ</span></div>
+        <p style="margin: 20px 0; color: var(--text-dim);">Atendimento emergencial 24h em toda São Paulo e Grande SP.</p>
+        <p style="font-size: 0.8rem; color: #444;">&copy; 2025 Desentupe Já. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5511952409578" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Efeito do Header ao Rolar
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ Interativo
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('i');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                } else {
+                    answer.style.display = 'block';
+                    icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
