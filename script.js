@@ -26,3 +26,26 @@ document.querySelectorAll('.service-card').forEach(card => {
     card.style.transition = 'all 0.6s ease-out';
     observer.observe(card);
 });
+const menuServicos = document.getElementById('menuServicos');
+const listaServicos = document.getElementById('listaServicos');
+const dropdownContainer = document.querySelector('.dropdown');
+
+// Abrir/Fechar ao clicar no botão "Serviços"
+menuServicos.addEventListener('click', function(e) {
+    e.stopPropagation();
+    listaServicos.classList.toggle('show');
+});
+
+// Fechar automaticamente quando o mouse sai da área do menu (Evita ficar travado)
+dropdownContainer.addEventListener('mouseleave', function() {
+    listaServicos.classList.remove('show');
+});
+
+// Fechar se clicar em qualquer outro lugar da tela
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        if (listaServicos.classList.contains('show')) {
+            listaServicos.classList.remove('show');
+        }
+    }
+}
