@@ -1,51 +1,33 @@
-// Efeito de mudança de cor no header ao rolar
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.padding = '10px 10%';
-        navbar.style.background = '#ffffff';
-    } else {
-        navbar.style.padding = '20px 10%';
-    }
-});
-
-// Revelar elementos ao rolar (animação simples)
-const observerOptions = { threshold: 0.1 };
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.service-card').forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease-out';
-    observer.observe(card);
-});
-const menuServicos = document.getElementById('menuServicos');
+const btnServicos = document.getElementById('menuServicos');
 const listaServicos = document.getElementById('listaServicos');
-const dropdownContainer = document.querySelector('.dropdown');
+const container = document.getElementById('dropdownContainer');
 
-// Abrir/Fechar ao clicar no botão "Serviços"
-menuServicos.addEventListener('click', function(e) {
+// Abre ao clicar
+btnServicos.addEventListener('click', (e) => {
     e.stopPropagation();
     listaServicos.classList.toggle('show');
 });
 
-// Fechar automaticamente quando o mouse sai da área do menu (Evita ficar travado)
-dropdownContainer.addEventListener('mouseleave', function() {
+// Fecha ao tirar o mouse da área do menu
+container.addEventListener('mouseleave', () => {
     listaServicos.classList.remove('show');
 });
 
-// Fechar se clicar em qualquer outro lugar da tela
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        if (listaServicos.classList.contains('show')) {
-            listaServicos.classList.remove('show');
-        }
+// Fecha ao clicar fora
+window.addEventListener('click', (e) => {
+    if (!btnServicos.contains(e.target)) {
+        listaServicos.classList.remove('show');
     }
-}
+});
+
+// Efeito no Scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        nav.style.padding = '10px 8%';
+        nav.style.background = '#000';
+    } else {
+        nav.style.padding = '15px 8%';
+        nav.style.background = 'rgba(15, 15, 15, 0.98)';
+    }
+});
