@@ -1,33 +1,34 @@
-const btnServicos = document.getElementById('menuServicos');
+const dropdownContainer = document.getElementById('dropdownContainer');
 const listaServicos = document.getElementById('listaServicos');
-const container = document.getElementById('dropdownContainer');
+const btnServicos = document.getElementById('btnServicos');
 
 // Abre ao clicar
-btnServicos.addEventListener('click', (e) => {
+btnServicos.addEventListener('click', function(e) {
+    e.preventDefault();
     e.stopPropagation();
     listaServicos.classList.toggle('show');
 });
 
-// Fecha ao tirar o mouse da área do menu
-container.addEventListener('mouseleave', () => {
+// Fecha ao sair de toda a área (botão + lista)
+dropdownContainer.addEventListener('mouseleave', function() {
     listaServicos.classList.remove('show');
 });
 
 // Fecha ao clicar fora
-window.addEventListener('click', (e) => {
-    if (!btnServicos.contains(e.target)) {
+document.addEventListener('click', function(e) {
+    if (!dropdownContainer.contains(e.target)) {
         listaServicos.classList.remove('show');
     }
 });
 
-// Efeito no Scroll
+// Header dinâmico no scroll
 window.addEventListener('scroll', () => {
-    const nav = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        nav.style.padding = '10px 8%';
-        nav.style.background = '#000';
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = '#000000';
+        navbar.style.padding = '12px 8%';
     } else {
-        nav.style.padding = '15px 8%';
-        nav.style.background = 'rgba(15, 15, 15, 0.98)';
+        navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+        navbar.style.padding = '20px 8%';
     }
 });
